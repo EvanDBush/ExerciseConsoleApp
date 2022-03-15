@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace ExerciseConsoleApp 
+﻿namespace ExerciseConsoleApp
 {
     class Program 
     {
@@ -12,18 +10,46 @@ namespace ExerciseConsoleApp
 
             string userOpeningResponse = Console.ReadLine();
 
-            if (userOpeningResponse = "1")
-// Set up Menu
+            if (userOpeningResponse == "1")
+            {
+                Console.WriteLine("That is Great! What did you do?");
+
+                // use CLLibrary menu instead.
+                // Create a dictionary or list, populate it with several values,
+                // retrieve at least one value, and use it in your program
+
+                Console.WriteLine("1) Push-ups");
+                Console.WriteLine("2) Sit-ups");
+                Console.WriteLine("3) Lunge");
+                Console.WriteLine("4) Squats");
+
+                Console.ReadLine();
+                
+                //Implement a “master loop” console application where the user
+                //can repeatedly enter commands/perform actions,
+                //including choosing to exit the program
             }
 
-            if (userOpeningResponse = "2")
+            if (userOpeningResponse == "2")
             {
-// get current time. calculate how much time is left in a day.
+                DateTime currentTime = DateTime.Now;
+                Console.WriteLine(currentTime);
+                // DateTime hoursLeft = 24:00 - currentTime.Hour;
+                // minutesLeft ???
+
+                //Console.WriteLine("Thats ok! It is only" + currentTime "right now. There is still");
+                //Console.WriteLine(hoursLeft + "hours and" minutesLeft "minutes left today!");
+                // get current time. calculate how much time is left in a day.
+                // Calculate and display data based on an external factor
+                // (ex: get the current date, and display how many days remaining until some event)
             }
             else
             {
-                Console.WriteLine("I'm sorry, . Please try entering 1 or 2 again.");
+                //phrasing??
+                Console.WriteLine("I'm sorry,that input did not work. Please try entering 1 or 2 again.");
             }
+
+            Console.ReadLine();
         }
     }
 
