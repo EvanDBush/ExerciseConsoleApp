@@ -22,7 +22,7 @@ namespace ExerciseConsoleApp
             }
             else
             {
-                Console.WriteLine("I'm sorry. Please try entering a 1 or 2 again.");
+                Console.WriteLine("I'm sorry, . Please try entering 1 or 2 again.");
             }
         }
     }
