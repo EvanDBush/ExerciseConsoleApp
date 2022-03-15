@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Mr. Bush\\Desktop\\coding_projects\\solutions\\ExerciseConsoleApp\\CodeLouisvilleLibrary\\CodeLouisvilleLibrary.csproj",
-      "projectName": "CodeLouisvilleLibrary",
-      "projectPath": "C:\\Users\\Mr. Bush\\Desktop\\coding_projects\\solutions\\ExerciseConsoleApp\\CodeLouisvilleLibrary\\CodeLouisvilleLibrary.csproj",
+      "projectUniqueName": "C:\\Users\\Mr. Bush\\Desktop\\coding_projects\\solutions\\CodeLouisvilleLibraryApp\\CodeLouisvilleLibraryApp\\CodeLouisvilleLibraryApp.csproj",
+      "projectName": "CodeLouisvilleLibraryApp",
+      "projectPath": "C:\\Users\\Mr. Bush\\Desktop\\coding_projects\\solutions\\CodeLouisvilleLibraryApp\\CodeLouisvilleLibraryApp\\CodeLouisvilleLibraryApp.csproj",
       "packagesPath": "C:\\Users\\Mr. Bush\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Mr. Bush\\Desktop\\coding_projects\\solutions\\ExerciseConsoleApp\\CodeLouisvilleLibrary\\obj\\",
+      "outputPath": "C:\\Users\\Mr. Bush\\Desktop\\coding_projects\\solutions\\CodeLouisvilleLibraryApp\\CodeLouisvilleLibraryApp\\obj\\",
       "projectStyle": "PackageReference",
       "originalTargetFrameworks": [
         "net6.0"

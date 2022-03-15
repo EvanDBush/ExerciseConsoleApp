@@ -19,7 +19,7 @@
                 
             string userCategoryResponse = Console.ReadLine();
 
-                if userCategoryResponse == "1")
+                if (userCategoryResponse == "1")
                 {
                     Console.WriteLine("1) Walk");
                     Console.WriteLine("2) Run");
@@ -59,6 +59,7 @@
             if (userOpeningResponse == "2")
             {
                 DateTime currentTime = DateTime.Now;
+                
                 Console.WriteLine(currentTime);
                 // DateTime hoursLeft = 24:00 - currentTime.Hour;
                 // minutesLeft ???
