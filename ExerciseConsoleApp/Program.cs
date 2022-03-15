@@ -12,18 +12,44 @@
 
             if (userOpeningResponse == "1")
             {
-                Console.WriteLine("That is Great! What did you do?");
+                Console.WriteLine("That is Great! What did you work on?");
+
+                Console.WriteLine("1) Cardio");
+                Console.WriteLine("2) Strength");
+                
+            string userCategoryResponse = Console.ReadLine();
+
+                if userCategoryResponse == "1")
+                {
+                    Console.WriteLine("1) Walk");
+                    Console.WriteLine("2) Run");
+                    Console.WriteLine("3) Swim");
+                    
+
+                    Console.ReadLine();
+                }
+
+                if (userOpeningResponse == "2")
+                {
+                    Console.WriteLine("1) Push-ups");
+                    Console.WriteLine("2) Sit-ups");
+                    Console.WriteLine("3) Lunge");
+                    Console.WriteLine("4) Squats");
+
+                    Console.ReadLine();
+                }
+
+                else
+                {
+                    //phrasing??
+                    Console.WriteLine("I'm sorry,that input did not work. Please try entering 1 or 2 again.");
+                }
 
                 // use CLLibrary menu instead.
                 // Create a dictionary or list, populate it with several values,
                 // retrieve at least one value, and use it in your program
 
-                Console.WriteLine("1) Push-ups");
-                Console.WriteLine("2) Sit-ups");
-                Console.WriteLine("3) Lunge");
-                Console.WriteLine("4) Squats");
-
-                Console.ReadLine();
+                
                 
                 //Implement a “master loop” console application where the user
                 //can repeatedly enter commands/perform actions,
