@@ -1,5 +1,13 @@
 ﻿namespace ExerciseConsoleApp
 {
+    public class Exercise 
+    {
+        public string Type;
+        public string Name;
+        public int Count;
+        public DateTime Time;
+
+    }
     class Program 
     {
     static void Main(string[] args)
@@ -66,6 +74,7 @@
 
                 //Console.WriteLine("Thats ok! It is only" + currentTime "right now. There is still");
                 //Console.WriteLine(hoursLeft + "hours and" minutesLeft "minutes left today!");
+                
                 // get current time. calculate how much time is left in a day.
                 // Calculate and display data based on an external factor
                 // (ex: get the current date, and display how many days remaining until some event)
