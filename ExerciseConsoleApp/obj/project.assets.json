@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Mr. Bush\\Source\\Repos\\ExerciseConsoleApp\\ExerciseConsoleApp\\ExerciseConsoleApp.csproj",
+      "projectUniqueName": "C:\\Users\\Mr. Bush\\Desktop\\coding_projects\\solutions\\ExerciseConsoleApp\\ExerciseConsoleApp\\ExerciseConsoleApp.csproj",
       "projectName": "ExerciseConsoleApp",
-      "projectPath": "C:\\Users\\Mr. Bush\\Source\\Repos\\ExerciseConsoleApp\\ExerciseConsoleApp\\ExerciseConsoleApp.csproj",
+      "projectPath": "C:\\Users\\Mr. Bush\\Desktop\\coding_projects\\solutions\\ExerciseConsoleApp\\ExerciseConsoleApp\\ExerciseConsoleApp.csproj",
       "packagesPath": "C:\\Users\\Mr. Bush\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Mr. Bush\\Source\\Repos\\ExerciseConsoleApp\\ExerciseConsoleApp\\obj\\",
+      "outputPath": "C:\\Users\\Mr. Bush\\Desktop\\coding_projects\\solutions\\ExerciseConsoleApp\\ExerciseConsoleApp\\obj\\",
       "projectStyle": "PackageReference",
       "originalTargetFrameworks": [
         "net6.0"

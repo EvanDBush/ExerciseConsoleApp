@@ -67,13 +67,13 @@
             if (userOpeningResponse == "2")
             {
                 DateTime currentTime = DateTime.Now;
-                
-                Console.WriteLine(currentTime);
-                // DateTime hoursLeft = 24:00 - currentTime.Hour;
-                // minutesLeft ???
 
-                //Console.WriteLine("Thats ok! It is only" + currentTime "right now. There is still");
-                //Console.WriteLine(hoursLeft + "hours and" minutesLeft "minutes left today!");
+
+                int hoursLeft = 23 - currentTime.Hour;
+                int minutesLeft = 60 - currentTime.Minute;
+
+                Console.WriteLine("Thats ok! It is only " + currentTime + " right now. There is still");
+                Console.WriteLine(hoursLeft + "hours and " + minutesLeft + " minutes left today!");
                 
                 // get current time. calculate how much time is left in a day.
                 // Calculate and display data based on an external factor
