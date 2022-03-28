@@ -8,18 +8,18 @@
             Console.WriteLine("Type 1 for Yes");
             Console.WriteLine("Type 2 for No");
 
-            string userOpeningResponse = Console.ReadLine();
+            string openingResponse = Console.ReadLine();
 
-            if (userOpeningResponse == "1")
+            if (openingResponse == "1")
             {
                 Console.WriteLine("That is Great! What did you work on?");
 
                 Console.WriteLine("1) Cardio");
                 Console.WriteLine("2) Strength");
                 
-            string userCategoryResponse = Console.ReadLine();
+            string categoryResponse = Console.ReadLine();
 
-                if (userCategoryResponse == "1")
+                if (categoryResponse == "1")
                 {
                     Console.WriteLine("1) Walk");
                     Console.WriteLine("2) Run");
@@ -69,7 +69,7 @@
                 //including choosing to exit the program
             }
 
-            if (userOpeningResponse == "2")
+            if (openingResponse == "2")
             {
                 
                 DateTime currentTime = DateTime.Now;
