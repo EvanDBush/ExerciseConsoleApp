@@ -4,6 +4,14 @@
     {
     static void Main(string[] args)
         {
+            bool runProgram = true;
+            while(runProgram)
+            {
+                runProgram = ExerciseAppMenu();
+            }
+        }
+    private static bool ExerciseAppMenu()
+        {
             Console.WriteLine("Hello! Did you work out today?");
             Console.WriteLine("Type 1 for Yes");
             Console.WriteLine("Type 2 for No");
@@ -16,8 +24,8 @@
 
                 Console.WriteLine("1) Cardio");
                 Console.WriteLine("2) Strength");
-                
-            string categoryResponse = Console.ReadLine();
+
+                string categoryResponse = Console.ReadLine();
 
                 if (categoryResponse == "1")
                 {
@@ -25,7 +33,7 @@
                     Console.WriteLine("2) Run");
                     Console.WriteLine("3) Swim");
                     Console.WriteLine("4) Strength Exercises");
-                    
+
 
                     Console.ReadLine();
                 }
@@ -62,8 +70,8 @@
                 // Create a dictionary or list, populate it with several values,
                 // retrieve at least one value, and use it in your program
 
-                
-                
+
+
                 //Implement a “master loop” console application where the user
                 //can repeatedly enter commands/perform actions,
                 //including choosing to exit the program
@@ -71,12 +79,12 @@
 
             if (openingResponse == "2")
             {
-                
+
                 DateTime currentTime = DateTime.Now;
                 int hoursLeft = 23 - currentTime.Hour;
                 int minutesLeft = GetMinutes(hoursLeft);
 
-                public void GetMinutes(int hoursLeft)
+                static void GetMinutes(int hoursLeft)
                 {
                     if (currentTime.Minute = 0)
                     {
@@ -88,12 +96,12 @@
                         minutesLeft = 60 - currentTime.Minute;
                     }
                 }
-                
+
 
                 Console.WriteLine("Thats ok! It is only " + currentTime.TimeOfDay + " right now. There is still");
                 Console.WriteLine(hoursLeft + "hours and " + minutesLeft + " minutes left today!");
                 Console.WriteLine("Go do an exercise and come back!");
-                
+
                 // get current time. calculate how much time is left in a day.
                 // Calculate and display data based on an external factor
                 // (ex: get the current     b ate, and display how many days remaining until some event)
@@ -106,6 +114,7 @@
 
             Console.ReadLine();
         }
+
 
         private static void getMinutes(int v, int hoursLeft)
         {

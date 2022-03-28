@@ -8,31 +8,61 @@ namespace ExerciseConsoleApp
 {
     public class ExerciseEvent
     {
-        public string CategoryOfExercise;
-        public string NameOfExercise;
-        public int CountOfExercise;
-        public DateTime TimeOfExercise;
-
-        public void SetCategory(string categoryResponse)
+        private string _categoryOfExercise;
+        public string CategoryOfExercise
         {
-            CategoryOfExercise = categoryResponse;
+            get 
+            { 
+                return _categoryOfExercise;
+            }
+            set
+            {
+                _categoryOfExercise = value;
+            }
         }
 
-        public void SetNameOfExercise(string exerciseNameResponse)
+        private string _nameOfExercise;
+
+        public string NameOfExercise
         {
-            NameOfExercise = exerciseNameResponse;
+            get
+            {
+                return _nameOfExercise;
+            }
+            set
+            {
+                _categoryOfExercise = value;
+            }
         }
 
-        public void SetCountOfExercise(int exerciseCountResponse)
+        private int _countOfExercise;
+        public int CountOfExercise
         {
-            CountOfExercise = exerciseCountResponse;
+            get
+            {
+                return _countOfExercise;
+            }
+            set
+            {
+                _countofExercise = value;
+            }
         }
 
-        public
+        private DateTime _timeOfExercise;
+        public DateTime TimeOfExercise
+        {
+            get
+            {
+                return this._timeOfExercise;
+            }
+            set
+            {
+                this._timeOfExercise = value;
+            }
+        }            
+    }
+
         
-        public ExerciseEvent(DateTime time)
-        {
-            TimeOfExercise = time;
-        }
+       
     }
 }
