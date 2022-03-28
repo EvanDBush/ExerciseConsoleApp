@@ -30,7 +30,7 @@
                     Console.ReadLine();
                 }
 
-                if (userCategoryResponse == "2")
+                if (categoryResponse == "2")
                 {
                     Console.WriteLine("1) Push-ups");
                     Console.WriteLine("2) Sit-ups");
@@ -38,15 +38,15 @@
                     Console.WriteLine("4) Squats");
                     Console.WriteLine("5) Cardio Exercises");
 
-                    string exerciseTypeResponse = Console.ReadLine();
+                    string exerciseNameResponse = Console.ReadLine();
 
-                    if (exerciseTypeResponse == "1")
+                    if (exerciseNameResponse == "1")
                     {
                         // create exerciseevent 
                         // set type to Push-ups
 
                         Console.WriteLine("how many Push-ups did you do?");
-                        int howManyResponse = int.Parse(Console.ReadLine());
+                        int exerciseCountResponse = int.Parse(Console.ReadLine());
 
                         // add how many response to count total
                     }
@@ -71,21 +71,24 @@
 
             if (userOpeningResponse == "2")
             {
+                
                 DateTime currentTime = DateTime.Now;
-
-
                 int hoursLeft = 23 - currentTime.Hour;
-                int minutesLeft;
+                int minutesLeft = GetMinutes(hoursLeft);
 
-                if (currentTime.Minute = 0)
+                public void GetMinutes(int hoursLeft)
                 {
-                    minutesLeft = 0;
-                    _ = hoursLeft + 1;
+                    if (currentTime.Minute = 0)
+                    {
+                        minutesLeft = 0;
+                        _ = hoursLeft + 1;
+                    }
+                    else
+                    {
+                        minutesLeft = 60 - currentTime.Minute;
+                    }
                 }
-                else
-                {
-                    minutesLeft = 60 - currentTime.Minute;
-                }
+                
 
                 Console.WriteLine("Thats ok! It is only " + currentTime.TimeOfDay + " right now. There is still");
                 Console.WriteLine(hoursLeft + "hours and " + minutesLeft + " minutes left today!");
@@ -102,6 +105,11 @@
             }
 
             Console.ReadLine();
+        }
+
+        private static void getMinutes(int v, int hoursLeft)
+        {
+            throw new NotImplementedException();
         }
     }
 

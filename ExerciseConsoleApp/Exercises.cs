@@ -13,17 +13,22 @@ namespace ExerciseConsoleApp
         public int CountOfExercise;
         public DateTime TimeOfExercise;
 
-        public void SetCategory(string userCategoryResponse)
+        public void SetCategory(string categoryResponse)
         {
-            CategoryOfExercise = userCategoryResponse;
+            CategoryOfExercise = categoryResponse;
         }
 
-        public ExerciseEvent(string userExerciseNameResponse)
+        public void SetNameOfExercise(string exerciseNameResponse)
         {
-            NameOfExercise = userExerciseNameResponse;
+            NameOfExercise = exerciseNameResponse;
         }
 
-        public Exe
+        public void SetCountOfExercise(int exerciseCountResponse)
+        {
+            CountOfExercise = exerciseCountResponse;
+        }
+
+        public
         
         public ExerciseEvent(DateTime time)
         {
