@@ -1,14 +1,6 @@
 ﻿namespace ExerciseConsoleApp
 {
-    public class Exercise 
-    {
-        public string Type;
-        public string Name;
-        public int Count;
-        public DateTime Time;
-
-    }
-    class Program 
+    class Program
     {
     static void Main(string[] args)
         {
@@ -32,19 +24,32 @@
                     Console.WriteLine("1) Walk");
                     Console.WriteLine("2) Run");
                     Console.WriteLine("3) Swim");
+                    Console.WriteLine("4) Strength Exercises");
                     
 
                     Console.ReadLine();
                 }
 
-                if (userOpeningResponse == "2")
+                if (userCategoryResponse == "2")
                 {
                     Console.WriteLine("1) Push-ups");
                     Console.WriteLine("2) Sit-ups");
                     Console.WriteLine("3) Lunge");
                     Console.WriteLine("4) Squats");
+                    Console.WriteLine("5) Cardio Exercises");
 
-                    Console.ReadLine();
+                    string exerciseTypeResponse = Console.ReadLine();
+
+                    if (exerciseTypeResponse == "1")
+                    {
+                        // create exerciseevent 
+                        // set type to Push-ups
+
+                        Console.WriteLine("how many Push-ups did you do?");
+                        int howManyResponse = int.Parse(Console.ReadLine());
+
+                        // add how many response to count total
+                    }
                 }
 
                 else
@@ -70,14 +75,25 @@
 
 
                 int hoursLeft = 23 - currentTime.Hour;
-                int minutesLeft = 60 - currentTime.Minute;
+                int minutesLeft;
 
-                Console.WriteLine("Thats ok! It is only " + currentTime + " right now. There is still");
+                if (currentTime.Minute = 0)
+                {
+                    minutesLeft = 0;
+                    _ = hoursLeft + 1;
+                }
+                else
+                {
+                    minutesLeft = 60 - currentTime.Minute;
+                }
+
+                Console.WriteLine("Thats ok! It is only " + currentTime.TimeOfDay + " right now. There is still");
                 Console.WriteLine(hoursLeft + "hours and " + minutesLeft + " minutes left today!");
+                Console.WriteLine("Go do an exercise and come back!");
                 
                 // get current time. calculate how much time is left in a day.
                 // Calculate and display data based on an external factor
-                // (ex: get the current date, and display how many days remaining until some event)
+                // (ex: get the current     b ate, and display how many days remaining until some event)
             }
             else
             {

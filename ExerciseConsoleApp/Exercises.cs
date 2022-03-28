@@ -6,12 +6,28 @@ using System.Threading.Tasks;
 
 namespace ExerciseConsoleApp
 {
-    internal class Exercises
+    public class ExerciseEvent
     {
-        //not sure how to break it down into categories.
-        // cardio, strength, flexibility
-        //cardio : walk, run, swim
-        // strength: push-ups, sit-ups, squats, lunges
-        // flexibility: leave blank to add or make checklist?
+        public string CategoryOfExercise;
+        public string NameOfExercise;
+        public int CountOfExercise;
+        public DateTime TimeOfExercise;
+
+        public void SetCategory(string userCategoryResponse)
+        {
+            CategoryOfExercise = userCategoryResponse;
+        }
+
+        public ExerciseEvent(string userExerciseNameResponse)
+        {
+            NameOfExercise = userExerciseNameResponse;
+        }
+
+        public Exe
+        
+        public ExerciseEvent(DateTime time)
+        {
+            TimeOfExercise = time;
+        }
     }
 }
