@@ -3,14 +3,48 @@
     class Program
     {
     static void Main(string[] args)
-        {
-            bool runProgram = true;
-            while(runProgram)
+    {
+            DisplayMenu();
+            string userInput = Console.ReadLine().ToLower();
+
+            while (userInput != "q")
             {
-                runProgram = ExerciseAppMenu();
+                switch (userInput)
+                {
+                    case "1":
+                        LogExercise();
+                        break;
+                    case "2":
+                        Console.WriteLine();
+                        break;
+                    case "3":
+                        Console.WriteLine();
+                        break;
+                    case "4":
+                        Console.WriteLine();
+                    default:
+                        break;
+
+                }
+
+                Console.WriteLine("Press enter to return to the Menu");
+                Console.ReadLine();
+                Console.Clear();
+                DisplayMenu();
+                userInput = Console.ReadLine().ToLower();   
             }
+    }
+
+    static void DisplayMenu()
+        {
+            Console.WriteLine("Welcome to the Exercise Console App!");
+            Console.WriteLine("What would you like to do?:");
+            Console.WriteLine(" 1 - Log an Exercise to RecordBook");
+            Console.WriteLine(" 2 - View Exercise RecordBook");
+            Console.WriteLine(" 3 - Add/Remove/Edit Exercises");
+            Console.WriteLine(" q - Exit Program")
         }
-    private static bool ExerciseAppMenu()
+    static void LogExercise()
         {
             Console.WriteLine("Hello! Did you work out today?");
             Console.WriteLine("Type 1 for Yes");
@@ -50,13 +84,11 @@
 
                     if (exerciseNameResponse == "1")
                     {
-                        // create exerciseevent 
-                        // set type to Push-ups
+
 
                         Console.WriteLine("how many Push-ups did you do?");
                         int exerciseCountResponse = int.Parse(Console.ReadLine());
 
-                        // add how many response to count total
                     }
                 }
 
@@ -114,6 +146,7 @@
 
             Console.ReadLine();
         }
+    
 
 
         private static void getMinutes(int v, int hoursLeft)

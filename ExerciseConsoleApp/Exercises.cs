@@ -11,8 +11,8 @@ namespace ExerciseConsoleApp
         private string _categoryOfExercise;
         public string CategoryOfExercise
         {
-            get 
-            { 
+            get
+            {
                 return _categoryOfExercise;
             }
             set
@@ -22,7 +22,6 @@ namespace ExerciseConsoleApp
         }
 
         private string _nameOfExercise;
-
         public string NameOfExercise
         {
             get
@@ -59,10 +58,6 @@ namespace ExerciseConsoleApp
             {
                 this._timeOfExercise = value;
             }
-        }            
-    }
-
-        
-       
+        }
     }
 }
