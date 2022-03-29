@@ -1,0 +1,45 @@
+{
+  "version": 2,
+  "dgSpecHash": "0iDpgZtWgEEyQfLsOPJaImUBa7TLWduP+JIbgJekgeZcc2yL2dUnOCrtY0oPsBFuw6kG3kbTEIe8b9hDT8FFhQ==",
+  "success": false,
+  "projectFilePath": "C:\\Users\\Mr. Bush\\Desktop\\coding_projects\\solutions\\ExerciseConsoleApp\\ExerciseClassTest\\ExerciseConsoleAppTest.csproj",
+  "expectedPackageFiles": [],
+  "logs": [
+    {
+      "code": "NU1100",
+      "level": "Error",
+      "message": "Unable to resolve 'MSTest.TestFramework (>= 2.2.7)' for 'net6.0'.",
+      "libraryId": "MSTest.TestFramework",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    },
+    {
+      "code": "NU1100",
+      "level": "Error",
+      "message": "Unable to resolve 'Microsoft.NET.Test.Sdk (>= 16.11.0)' for 'net6.0'.",
+      "libraryId": "Microsoft.NET.Test.Sdk",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    },
+    {
+      "code": "NU1100",
+      "level": "Error",
+      "message": "Unable to resolve 'coverlet.collector (>= 3.1.0)' for 'net6.0'.",
+      "libraryId": "coverlet.collector",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    },
+    {
+      "code": "NU1100",
+      "level": "Error",
+      "message": "Unable to resolve 'MSTest.TestAdapter (>= 2.2.7)' for 'net6.0'.",
+      "libraryId": "MSTest.TestAdapter",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    }
+  ]
+}
