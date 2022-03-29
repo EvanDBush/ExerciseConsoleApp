@@ -1,4 +1,4 @@
-﻿namespace Exercises
+﻿namespace ExerciseConsoleApp
 {
     public class ExerciseEvent
     {
@@ -52,18 +52,6 @@
             {
                 this._timeOfExercise = value;
             }
-        }
-    }
-
-    [TestClass]
-    public class ExerciseTest
-    {
-        [TestMethod]
-        public void SomePropertyTestValid()
-        {
-            //Arrange
-            // Act
-            //Assert
         }
     }
 }

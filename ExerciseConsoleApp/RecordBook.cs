@@ -5,8 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace ExerciseConsoleApp
-{
-    internal class Class1
+{   
+    public class RecordBook
     {
+        
     }
+    
 }
