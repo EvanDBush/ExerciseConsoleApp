@@ -90,6 +90,7 @@ namespace ExerciseConsoleApp
                             string exerciseName = "Swim";
                             break;
                         default:
+                            Console.WriteLine("I'm Sorry, that input did not work.");
                             DisplayMenu();
                             break;
 
@@ -144,6 +145,14 @@ namespace ExerciseConsoleApp
 
                         Console.WriteLine("how many Push-ups did you do?");
                         int exerciseCountResponse = int.Parse(Console.ReadLine());
+
+                        var exerciseEvent = new ExerciseEvent();
+                        exerciseEvent.NameOfExercise = exerciseNameResponse;
+                        exerciseEvent.CategoryOfExercise = categoryResponse;
+                        exerciseEvent.CountOfExercise = exerciseCountResponse;
+
+                        Console.WriteLine(exerciseEvent);
+                        DisplayMenu();
 
                     }
                 }
@@ -201,14 +210,36 @@ namespace ExerciseConsoleApp
 
         static void ViewRecordBook()
         {
+            switch (RecordViewResponse)
+            {
+                case "1":
+                    string recordSpan = "All-Time Totals";
+                    break;
+                case "2":
+                    string recordSpan = "This Weeks Totals";
+                    break;
+                case "3":
+                    string recordSpan = "Today's Totals";
+                    break;
+                case "4":
+                    DisplayMenu();
+                    break;
+                default:
+                    Console.WriteLine("I'm Sorry, that input did not work.");
+                    DisplayMenu();
+                    break;
+
+            }
+
             Console.WriteLine("Which Records would you like to view?");
             Console.WriteLine(" 1 - All-Time Totals");
             Console.WriteLine(" 2 - This Weeks Totals");
             Console.WriteLine(" 3 - Todays Totals");
             Console.WriteLine(" 4 - Back to Main Menu");
 
-        }
+            string RecordViewResponse = Console.ReadLine();
 
+        }
         static void EditExerciseList()
         {
             Console.WriteLine("This feature is under development.");
