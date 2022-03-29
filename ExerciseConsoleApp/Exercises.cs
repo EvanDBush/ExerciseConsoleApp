@@ -60,4 +60,16 @@ namespace ExerciseConsoleApp
             }
         }
     }
+
+    [TestClass]
+    public class ExerciseTest
+    {
+        [TestMethod]
+        public void SomePropertyTestValid()
+        {
+            //Arrange
+            // Act
+            //Assert
+        }
+    }
 }
