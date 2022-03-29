@@ -1,4 +1,8 @@
-﻿namespace ExerciseConsoleApp
+﻿using CodeLouisvilleLibrary;
+using System;
+using System.Collections.Generic;
+
+namespace ExerciseConsoleApp
 {
     class Program
     {
@@ -20,6 +24,7 @@
                         break;
                     case "c":
                         EditExerciseList();
+                        break;
                     default:
                         ReturnToMenu();
                         break;
@@ -66,7 +71,7 @@
                 Console.WriteLine("1) Cardio");
                 Console.WriteLine("2) Strength");
 
-                string categoryResponse = Console.ReadLine().ToLower;
+                string categoryResponse = Console.ReadLine();
 
 
                 if (categoryResponse == "1")
@@ -105,6 +110,27 @@
                 {
                     string exerciseCategory = "Strength";
 
+                    switch (exerciseNameResponse)
+                    {
+                        case "1":
+                            string exerciseName = "Push-ups";
+                            break;
+                        case "2":
+                            string exerciseName = "Sit-ups";
+                            break;
+                        case "3":
+                            string exerciseName = "Lunge";
+                            break;
+                        case "4":
+                            string exerciseName = "Squats";
+                            break;
+                        default:
+                            Console.WriteLine("I'm Sorry, that input did not work.");
+                            DisplayMenu();
+                            break;
+
+                    }
+
                     Console.WriteLine("1) Push-ups");
                     Console.WriteLine("2) Sit-ups");
                     Console.WriteLine("3) Lunge");
@@ -133,29 +159,30 @@
 
             }
 
-            if (openingResponse == "2")
+            if (openingResponse == "n")
             {
 
                 DateTime currentTime = DateTime.Now;
                 int hoursLeft = 23 - currentTime.Hour;
-                int minutesLeft = GetMinutes(hoursLeft);
+                int minutesNow = currentTime.Minute;
 
-                static void GetMinutes(int hoursLeft)
+                static string GetMinutes(int hoursLeft)
                 {
-                    if (currentTime.Minute = 0)
+                    if (minutesNow = 0)
                     {
-                        minutesLeft = 0;
+                        
                         _ = hoursLeft + 1;
+                        
                     }
                     else
                     {
-                        minutesLeft = 60 - currentTime.Minute;
+                        _ = 60 - currentTime.Minute;
                     }
                 }
 
 
                 Console.WriteLine("Thats ok! It is only " + currentTime.TimeOfDay + " right now. There is still");
-                Console.WriteLine(hoursLeft + "hours and " + minutesLeft + " minutes left today!");
+                Console.WriteLine(hoursLeft + "hours and " + GetMinutes(hoursLeft) + " minutes left today!");
                 Console.WriteLine("Go do an exercise and come back!");
                 ReturnToMenu();
 
