@@ -1,5 +1,4 @@
-﻿using CodeLouisvilleLibrary;
-using System;
+﻿using System;
 using System.Collections.Generic;
 
 namespace ExerciseConsoleApp
@@ -33,9 +32,6 @@ namespace ExerciseConsoleApp
                         break;
 
                 }
-
-                ReturnToMenu();
-                userInput = Console.ReadLine().ToLower();
             }
         }
         static void DisplayMenu()
@@ -215,6 +211,7 @@ namespace ExerciseConsoleApp
             Console.WriteLine(" 4 - Back to Main Menu");
 
             string RecordViewResponse = Console.ReadLine();
+            string RecordSpan = "";
 
             switch (RecordViewResponse)
             {
@@ -228,11 +225,11 @@ namespace ExerciseConsoleApp
                     recordSpan = "Today's Totals";
                     break;
                 case "4":
-                    DisplayMenu();
+                    ReturnToMenu();
                     break;
                 default:
                     Console.WriteLine("I'm Sorry, that input did not work.");
-                    DisplayMenu();
+                    ReturnToMenu();
                     break;
 
             }
@@ -250,8 +247,17 @@ namespace ExerciseConsoleApp
             Console.WriteLine("Are you sure you want to exit  the program?");
             Console.WriteLine("Type y for Yes. I want to Exit");
             Console.WriteLine("Type n for No. I want to return to the menu.");
-            
 
+            string ExitProgramResponse = Console.ReadLine().ToLower();
+
+            if (ExitProgramResponse != "y")
+            {
+                ReturnToMenu();
+            }
+            else
+            {
+                Console.WriteLine("Later!");
+            }
         }
 
 

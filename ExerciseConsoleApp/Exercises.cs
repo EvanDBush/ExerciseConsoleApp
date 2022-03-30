@@ -37,7 +37,7 @@
             }
             set
             {
-                _countofExercise = value;
+                _countOfExercise = value;
             }
         }
 
