@@ -4,52 +4,6 @@
     "C:\\Users\\Mr. Bush\\Desktop\\coding_projects\\solutions\\ExerciseConsoleApp\\ExerciseConsoleApp\\ExerciseConsoleApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Mr. Bush\\Desktop\\coding_projects\\solutions\\ExerciseConsoleApp\\CodeLouisvilleLibrary\\CodeLouisvilleLibrary.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\Mr. Bush\\Desktop\\coding_projects\\solutions\\ExerciseConsoleApp\\CodeLouisvilleLibrary\\CodeLouisvilleLibrary.csproj",
-        "projectName": "CodeLouisvilleLibrary",
-        "projectPath": "C:\\Users\\Mr. Bush\\Desktop\\coding_projects\\solutions\\ExerciseConsoleApp\\CodeLouisvilleLibrary\\CodeLouisvilleLibrary.csproj",
-        "packagesPath": "C:\\Users\\Mr. Bush\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Mr. Bush\\Desktop\\coding_projects\\solutions\\ExerciseConsoleApp\\CodeLouisvilleLibrary\\obj\\",
-        "projectStyle": "PackageReference",
-        "originalTargetFrameworks": [
-          "net6.0"
-        ],
-        "frameworks": {
-          "net6.0": {
-            "targetAlias": "net6.0",
-            "projectReferences": {}
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        }
-      },
-      "frameworks": {
-        "net6.0": {
-          "targetAlias": "net6.0",
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
-        }
-      }
-    },
     "C:\\Users\\Mr. Bush\\Desktop\\coding_projects\\solutions\\ExerciseConsoleApp\\ExerciseConsoleApp\\ExerciseConsoleApp.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -65,11 +19,7 @@
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
-            "projectReferences": {
-              "C:\\Users\\Mr. Bush\\Desktop\\coding_projects\\solutions\\ExerciseConsoleApp\\CodeLouisvilleLibrary\\CodeLouisvilleLibrary.csproj": {
-                "projectPath": "C:\\Users\\Mr. Bush\\Desktop\\coding_projects\\solutions\\ExerciseConsoleApp\\CodeLouisvilleLibrary\\CodeLouisvilleLibrary.csproj"
-              }
-            }
+            "projectReferences": {}
           }
         },
         "warningProperties": {
