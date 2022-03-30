@@ -156,16 +156,19 @@ namespace ExerciseConsoleApp
 
                     }
 
-                        Console.WriteLine($"how many {exerciseName} did you do?");
-                        int exerciseCount = int.Parse(Console.ReadLine());
+                    Console.WriteLine($"how many {exerciseName} did you do?");
+                    int exerciseCount = int.Parse(Console.ReadLine());
 
-                        var exerciseEvent = new ExerciseEvent();
-                        exerciseEvent.NameOfExercise = exerciseName;
-                        exerciseEvent.CategoryOfExercise = exerciseCategory;
-                        exerciseEvent.CountOfExercise = exerciseCount;
+                    var exerciseEvent = new ExerciseEvent();
+                    exerciseEvent.NameOfExercise = exerciseName;
+                    exerciseEvent.CategoryOfExercise = exerciseCategory;
+                    exerciseEvent.CountOfExercise = exerciseCount;
 
-                        Console.WriteLine(exerciseEvent);
-                        ReturnToMenu();
+                    var recordRepository = new RecordRepository();
+                    recordRepository.Add(exerciseEvent);
+
+                    Console.WriteLine(exerciseEvent);
+                    ReturnToMenu();
 
                     
                 }
