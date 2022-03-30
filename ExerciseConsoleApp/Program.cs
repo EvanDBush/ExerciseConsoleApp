@@ -103,7 +103,20 @@ namespace ExerciseConsoleApp
 
                     }
 
-                    
+                    Console.WriteLine($"how long did you {exerciseName} for?");
+                    Console.WriteLine("please enter your estimate in full minutes");
+                    int exerciseCount = int.Parse(Console.ReadLine());
+
+                    var exerciseEvent = new ExerciseEvent();
+                    exerciseEvent.NameOfExercise = exerciseName;
+                    exerciseEvent.CategoryOfExercise = exerciseCategory;
+                    exerciseEvent.CountOfExercise = exerciseCount;
+
+                    var recordRepository = new RecordRepository();
+                    recordRepository.Add(exerciseEvent);
+
+                    Console.WriteLine(exerciseEvent);
+                    ReturnToMenu();
 
 
                     Console.ReadLine();
