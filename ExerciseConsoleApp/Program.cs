@@ -65,7 +65,7 @@ namespace ExerciseConsoleApp
             Console.WriteLine("Type n for No");
 
             string openingResponse = Console.ReadLine();
-            var recordRepository = new RecordRepository();
+            var recordRepository = new recordRepository("ExerciseHistory.json");
 
             if (openingResponse == "y")
             {
@@ -82,6 +82,7 @@ namespace ExerciseConsoleApp
                     string exerciseCategory = "Cardio";
                     string exerciseName = "";
 
+                    Console.WriteLine("What Cardio exercise did you do?");
                     Console.WriteLine("1) Walk");
                     Console.WriteLine("2) Run");
                     Console.WriteLine("3) Swim");
@@ -130,6 +131,7 @@ namespace ExerciseConsoleApp
                     string exerciseCategory = "Strength";
                     string exerciseName = "";
 
+                    Console.WriteLine("What Strength exercise did you do?");
                     Console.WriteLine("1) Push-ups");
                     Console.WriteLine("2) Sit-ups");
                     Console.WriteLine("3) Lunges");
@@ -207,9 +209,10 @@ namespace ExerciseConsoleApp
 
             Console.WriteLine("Which Records would you like to view?");
             Console.WriteLine(" 1 - All-Exercise Records");
-            Console.WriteLine(" 2 - This Weeks Totals");
-            Console.WriteLine(" 3 - Todays Totals");
-            Console.WriteLine(" 4 - Back to Main Menu");
+            Console.WriteLine(" 2 - Category Totals");
+            Console.WriteLine(" 3 - Exercise Totals");
+            Console.WriteLine(" 4 - Personal Bests");
+            Console.WriteLine(" 5 - Back to Main Menu");
 
             string RecordViewResponse = Console.ReadLine();
             string RecordSpan = "";
@@ -217,15 +220,59 @@ namespace ExerciseConsoleApp
             switch (RecordViewResponse)
             {
                 case "1":
-                    RecordSpan = "All Exercise Events";
+                    RecordSpan = "All-Exercise Records";
+                    Console.WriteLine(recordRepository);
+                    
                     break;
                 case "2":
-                    RecordSpan = "This Weeks Totals";
+                    RecordSpan = "Category Totals";
+                    Console.WriteLine("What Category would you like to see Totals for?");
+                    Console.WriteLine("1) Cardio ");
+                    Console.WriteLine("2) Strength ");
+
+                    string CategoryRecordResponse = Console.ReadLine();
+                    if (CategoryRecordResponse == "1")
+                    {
+                        string category = "Cardio";
+                        int result = recordRepository.GetTotalCountByCategoryName(string category);
+                        Console.WriteLine($"You have done a total of {result} minutes of cardio exercises.");
+                    }
+                    if (CategoryRecordResponse == "2")
+                    {
+                        string category = "Strength";
+                        int result = recordRepository.GetTotalCountByCategoryName(string category);
+                        Console.WriteLine($"You have done a total of {result} repetitions of strength exercises.");
+                    }
+                    else
+                    {
+                        ReturnToMenu();
+                    }
                     break;
                 case "3":
-                    RecordSpan = "Today's Totals";
+                    RecordSpan = "Exercise Totals";
+                    Console.WriteLine("What exercise would you like to see totals for");
+                    Console.WriteLine("1) Walking");
+                    Console.WriteLine("2) Running");
+                    Console.WriteLine("3) Swimming");
+                    Console.WriteLine("4) Push-ups");
+                    Console.WriteLine("5) Sit-ups");
+                    Console.WriteLine("6) Lunges");
+                    Console.WriteLine("7) Squats");
+                    
+
                     break;
                 case "4":
+                    RecordSpan = "Personal Bests";
+                    Console.WriteLine("What exercise would you like to see personal bests for");
+                    Console.WriteLine("1) Walking");
+                    Console.WriteLine("2) Running");
+                    Console.WriteLine("3) Swimming");
+                    Console.WriteLine("4) Push-ups");
+                    Console.WriteLine("5) Sit-ups");
+                    Console.WriteLine("6) Lunges");
+                    Console.WriteLine("7) Squats");
+                    break;
+                case "5":
                     ReturnToMenu();
                     break;
                 default:
