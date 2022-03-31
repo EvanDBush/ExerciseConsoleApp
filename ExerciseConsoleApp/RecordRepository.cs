@@ -8,13 +8,13 @@ using System.Text.Json;
 
 namespace ExerciseConsoleApp
 {   
-    public class recordRepository
+    public class RecordRepository
     {
         private readonly List<ExerciseEvent> _exerciseEvents = new List<ExerciseEvent>();
 
         private string _fileName;
 
-        public recordRepository(string fileName)
+        public RecordRepository(string fileName)
         {
             _fileName = fileName;
             if(File.Exists(_fileName))

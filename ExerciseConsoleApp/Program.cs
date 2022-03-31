@@ -5,6 +5,7 @@ namespace ExerciseConsoleApp
 {
     class Program
     {
+        private static RecordRepository recordRepository = new RecordRepository("ExerciseHistory.json");
         static void Main(string[] args)
         {
 
@@ -61,7 +62,6 @@ namespace ExerciseConsoleApp
 
         static void LogExercise()
         {
-            var recordRepository = new recordRepository("ExerciseHistory.json");
 
             Console.WriteLine("Let's log in an exercise! Did you work out today?");
             Console.WriteLine("Type y for Yes");
@@ -208,7 +208,6 @@ namespace ExerciseConsoleApp
         }      
         static void ViewRecordBook()
         {
-            string recordSpan = "";
 
             Console.WriteLine("Which Records would you like to view?");
             Console.WriteLine(" 1 - All-Exercise Records");
@@ -246,7 +245,7 @@ namespace ExerciseConsoleApp
         }
         static void GetAllRecords() 
         {
-            foreach (ExerciseEvent exerciseEvent in recordRepository)
+            foreach (ExerciseEvent exerciseEvent in List<ExerciseEvent> )
             {
                 Console.WriteLine(exerciseEvent);
             }
