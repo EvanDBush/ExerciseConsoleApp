@@ -25,19 +25,49 @@ namespace ExerciseConsoleApp
             }
         }
         public void Add(ExerciseEvent exercise)
-
         {
             _exerciseEvents.Add(exercise);
+            string json = JsonSerializer.Serialize<List<ExerciseEvent>>(_exerciseEvents);
+            File.WriteAllText(_fileName, json);
         }
 
-        public void SaveToLocal()
+        public List<ExerciseEvent> FindEventsByCategory(string category)
         {
-            foreach (var exercise in _exerciseEvents)
+            List<ExerciseEvent> categoryList = new List<ExerciseEvent>();
+            foreach (ExerciseEvent exerciseEvent in _exerciseEvents)
             {
-                Console.WriteLine(exercise);
+                if (exerciseEvent.CategoryOfExercise == category)
+                {
+                    categoryList.Add(exerciseEvent);
+                }
             }
+            return categoryList;
         }
 
+        public int GetTotalCountByCategoryName(string category)
+        {
+            return _exerciseEvents
+                .Where(exerciseEvent => exerciseEvent.CategoryOfExercise == category)
+                .Select(exerciseEvent => exerciseEvent.CountOfExercise)
+                .Sum();
+        }
+
+
+        public int GetTotalCountByExerciseName(string exerciseName)
+        {
+            return _exerciseEvents
+                .Where(exerciseEvent => exerciseEvent.NameOfExercise == exerciseName)
+                .Select(exerciseEvent => exerciseEvent.CountOfExercise)
+                .Sum();
+        }
+
+        public int GetPersonalBestByExerciseName(string exerciseName)
+        {
+            return _exerciseEvents
+                .Where(exerciseEvent => exerciseEvent.NameOfExercise == exerciseName)
+                .Select(exerciseEvent => exerciseEvent.CountOfExercise)
+                .Max();
+        }
 
     }
     
