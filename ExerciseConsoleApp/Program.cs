@@ -220,57 +220,16 @@ namespace ExerciseConsoleApp
             switch (RecordViewResponse)
             {
                 case "1":
-                    RecordSpan = "All-Exercise Records";
-                    Console.WriteLine(recordRepository);
-                    
+                    GetAllRecords();
                     break;
                 case "2":
-                    RecordSpan = "Category Totals";
-                    Console.WriteLine("What Category would you like to see Totals for?");
-                    Console.WriteLine("1) Cardio ");
-                    Console.WriteLine("2) Strength ");
-
-                    string CategoryRecordResponse = Console.ReadLine();
-                    if (CategoryRecordResponse == "1")
-                    {
-                        string category = "Cardio";
-                        int result = recordRepository.GetTotalCountByCategoryName(string category);
-                        Console.WriteLine($"You have done a total of {result} minutes of cardio exercises.");
-                    }
-                    if (CategoryRecordResponse == "2")
-                    {
-                        string category = "Strength";
-                        int result = recordRepository.GetTotalCountByCategoryName(string category);
-                        Console.WriteLine($"You have done a total of {result} repetitions of strength exercises.");
-                    }
-                    else
-                    {
-                        ReturnToMenu();
-                    }
+                    GetCategoryTotals();
                     break;
                 case "3":
-                    RecordSpan = "Exercise Totals";
-                    Console.WriteLine("What exercise would you like to see totals for");
-                    Console.WriteLine("1) Walking");
-                    Console.WriteLine("2) Running");
-                    Console.WriteLine("3) Swimming");
-                    Console.WriteLine("4) Push-ups");
-                    Console.WriteLine("5) Sit-ups");
-                    Console.WriteLine("6) Lunges");
-                    Console.WriteLine("7) Squats");
-                    
-
+                    GetExerciseTotals();
                     break;
                 case "4":
-                    RecordSpan = "Personal Bests";
-                    Console.WriteLine("What exercise would you like to see personal bests for");
-                    Console.WriteLine("1) Walking");
-                    Console.WriteLine("2) Running");
-                    Console.WriteLine("3) Swimming");
-                    Console.WriteLine("4) Push-ups");
-                    Console.WriteLine("5) Sit-ups");
-                    Console.WriteLine("6) Lunges");
-                    Console.WriteLine("7) Squats");
+                    GetPersonalBests();
                     break;
                 case "5":
                     ReturnToMenu();
@@ -283,7 +242,126 @@ namespace ExerciseConsoleApp
             }
 
         }
+        static void GetAllRecords() 
+        {
+            foreach (ExerciseEvent exerciseEvent in recordRepository)
+            {
+                Console.WriteLine(recordRepository);
+            }
+        }
 
+        static void GetCategoryTotals()
+        {
+            Console.WriteLine("What Category would you like to see Totals for?");
+            Console.WriteLine("1) Cardio ");
+            Console.WriteLine("2) Strength ");
+
+            string CategoryRecordResponse = Console.ReadLine();
+            if (CategoryRecordResponse == "1")
+            {
+                string category = "Cardio";
+                int result = recordRepository.GetTotalCountByCategoryName(string category);
+                Console.WriteLine($"You have done a total of {result} minutes of cardio exercises.");
+            }
+            if (CategoryRecordResponse == "2")
+            {
+                string category = "Strength";
+                int result = recordRepository.GetTotalCountByCategoryName(string category);
+                Console.WriteLine($"You have done a total of {result} repetitions of strength exercises.");
+            }
+            else
+            {
+                ReturnToMenu();
+            }
+        }
+
+        static void GetExerciseTotals()
+        {
+            Console.WriteLine("What exercise would you like to see totals for");
+            Console.WriteLine("1) Walking");
+            Console.WriteLine("2) Running");
+            Console.WriteLine("3) Swimming");
+            Console.WriteLine("4) Push-ups");
+            Console.WriteLine("5) Sit-ups");
+            Console.WriteLine("6) Lunges");
+            Console.WriteLine("7) Squats");
+
+            int exerciseTotalsNameResponse = Console.ReadLine();
+            
+            switch (exerciseTotalsNameResponse)
+            {
+                case "1":
+                    exerciseName = "Walk";
+                    break;
+                case "2":
+                    exerciseName = "Run";
+                    break;
+                case "3":
+                    exerciseName = "Swim";
+                    break;
+                case "4":
+                    exerciseName = "Push-ups";
+                    break;
+                case "5":
+                    exerciseName = "Sit-ups";
+                    break;
+                case "6":
+                    exerciseName = "Lunges";
+                    break;
+                case "7":
+                    exerciseName = "Squats";
+                    break;
+                default:
+                    Console.WriteLine("I'm Sorry, that input did not work.");
+                    ReturnToMenu();
+                    break;
+
+            }
+        }
+
+        static void GetPersonalBests()
+        {
+            Console.WriteLine("What exercise would you like to see personal bests for");
+            Console.WriteLine("1) Walking");
+            Console.WriteLine("2) Running");
+            Console.WriteLine("3) Swimming");
+            Console.WriteLine("4) Push-ups");
+            Console.WriteLine("5) Sit-ups");
+            Console.WriteLine("6) Lunges");
+            Console.WriteLine("7) Squats");
+            int personalBestNameResponse = Console.ReadLine();
+
+            switch (personalBestNameResponse)
+            {
+                case "1":
+                    exerciseName = "Walk";
+                
+                    break;
+                case "2":
+                    exerciseName = "Run";
+                    break;
+                case "3":
+                    exerciseName = "Swim";
+                    break;
+                case "4":
+                    exerciseName = "Push-ups";
+                    break;
+                case "5":
+                    exerciseName = "Sit-ups";
+                    break;
+                case "6":
+                    exerciseName = "Lunges";
+                    break;
+                case "7":
+                    exerciseName = "Squats";
+                    break;
+                default:
+                    Console.WriteLine("I'm Sorry, that input did not work.");
+                    ReturnToMenu();
+                    break;
+
+            }
+        }
         static bool ExitProgram()
         {
             Console.WriteLine("Are you sure you want to exit  the program?");
