@@ -7,6 +7,7 @@ namespace ExerciseConsoleApp
     {
         static void Main(string[] args)
         {
+
             do
             {
                 DisplayMenu();
@@ -60,12 +61,14 @@ namespace ExerciseConsoleApp
 
         static void LogExercise()
         {
+            var recordRepository = new recordRepository("ExerciseHistory.json");
+
             Console.WriteLine("Let's log in an exercise! Did you work out today?");
             Console.WriteLine("Type y for Yes");
             Console.WriteLine("Type n for No");
 
             string openingResponse = Console.ReadLine();
-            var recordRepository = new recordRepository("ExerciseHistory.json");
+            
 
             if (openingResponse == "y")
             {
@@ -215,7 +218,6 @@ namespace ExerciseConsoleApp
             Console.WriteLine(" 5 - Back to Main Menu");
 
             string RecordViewResponse = Console.ReadLine();
-            string RecordSpan = "";
 
             switch (RecordViewResponse)
             {
@@ -246,7 +248,7 @@ namespace ExerciseConsoleApp
         {
             foreach (ExerciseEvent exerciseEvent in recordRepository)
             {
-                Console.WriteLine(recordRepository);
+                Console.WriteLine(exerciseEvent);
             }
         }
 
@@ -260,13 +262,13 @@ namespace ExerciseConsoleApp
             if (CategoryRecordResponse == "1")
             {
                 string category = "Cardio";
-                int result = recordRepository.GetTotalCountByCategoryName(string category);
+                int result = recordRepository.GetTotalCountByCategoryName(category);
                 Console.WriteLine($"You have done a total of {result} minutes of cardio exercises.");
             }
             if (CategoryRecordResponse == "2")
             {
                 string category = "Strength";
-                int result = recordRepository.GetTotalCountByCategoryName(string category);
+                int result = recordRepository.GetTotalCountByCategoryName(category);
                 Console.WriteLine($"You have done a total of {result} repetitions of strength exercises.");
             }
             else
@@ -277,6 +279,8 @@ namespace ExerciseConsoleApp
 
         static void GetExerciseTotals()
         {
+            string exerciseName = "";
+
             Console.WriteLine("What exercise would you like to see totals for");
             Console.WriteLine("1) Walking");
             Console.WriteLine("2) Running");
@@ -286,7 +290,7 @@ namespace ExerciseConsoleApp
             Console.WriteLine("6) Lunges");
             Console.WriteLine("7) Squats");
 
-            int exerciseTotalsNameResponse = Console.ReadLine();
+            string exerciseTotalsNameResponse = Console.ReadLine();
             
             switch (exerciseTotalsNameResponse)
             {
@@ -321,6 +325,8 @@ namespace ExerciseConsoleApp
 
         static void GetPersonalBests()
         {
+            string exerciseName = "";
+
             Console.WriteLine("What exercise would you like to see personal bests for");
             Console.WriteLine("1) Walking");
             Console.WriteLine("2) Running");
@@ -329,13 +335,13 @@ namespace ExerciseConsoleApp
             Console.WriteLine("5) Sit-ups");
             Console.WriteLine("6) Lunges");
             Console.WriteLine("7) Squats");
-            int personalBestNameResponse = Console.ReadLine();
+            
+            string personalBestNameResponse = Console.ReadLine();
 
             switch (personalBestNameResponse)
             {
                 case "1":
                     exerciseName = "Walk";
-                
                     break;
                 case "2":
                     exerciseName = "Run";
