@@ -7,32 +7,15 @@ namespace ExerciseConsoleApp
     {
         static void Main(string[] args)
         {
-            DisplayMenu();
-
-            string userInput = Console.ReadLine().ToLower();
-
-            while (userInput != "q")
+            do
             {
-                switch (userInput)
-                {
-                    case "a":
-                        LogExercise();
-                        break;
-                    case "b":
-                        ViewRecordBook();
-                        break;
-                    case "c":
-                        EditExerciseList();
-                        break;
-                    case "q":
-                        ExitProgram();
-                        break;
-                    default:
-                        ReturnToMenu();
-                        break;
-
-                }
+                DisplayMenu();
             }
+
+
+            while (ExitProgram());
+           
+            
         }
         static void DisplayMenu()
         {
@@ -44,17 +27,37 @@ namespace ExerciseConsoleApp
             Console.WriteLine("What would you like to do?:");
             Console.WriteLine(" a - Log an Exercise to RecordBook");
             Console.WriteLine(" b - View Exercise RecordBook");
-            Console.WriteLine(" c - Add/Remove/Edit Exercises");
             Console.WriteLine(" q - Exit Program");
+
+            string userInput = Console.ReadLine().ToLower();
+
+            switch (userInput)
+            {
+                case "a":
+                    LogExercise();
+                    break;
+                case "b":
+                    ViewRecordBook();
+                    break;
+                case "q":
+                    ExitProgram();
+                    break;
+                default:
+                    ReturnToMenu();
+                    break;
+
+            }
         }
 
         static void ReturnToMenu()
         {
+            
             Console.WriteLine("Press enter to return to the Menu");
             Console.ReadLine();
             Console.Clear();
             DisplayMenu();
         }
+
         static void LogExercise()
         {
             Console.WriteLine("Let's log in an exercise! Did you work out today?");
@@ -62,6 +65,7 @@ namespace ExerciseConsoleApp
             Console.WriteLine("Type n for No");
 
             string openingResponse = Console.ReadLine();
+            var recordRepository = new RecordRepository();
 
             if (openingResponse == "y")
             {
@@ -112,7 +116,6 @@ namespace ExerciseConsoleApp
                     exerciseEvent.CategoryOfExercise = exerciseCategory;
                     exerciseEvent.CountOfExercise = exerciseCount;
 
-                    var recordRepository = new RecordRepository();
                     recordRepository.Add(exerciseEvent);
 
                     Console.WriteLine(exerciseEvent);
@@ -129,7 +132,7 @@ namespace ExerciseConsoleApp
 
                     Console.WriteLine("1) Push-ups");
                     Console.WriteLine("2) Sit-ups");
-                    Console.WriteLine("3) Lunge");
+                    Console.WriteLine("3) Lunges");
                     Console.WriteLine("4) Squats");
                     Console.WriteLine("5) Cardio Exercises");
 
@@ -164,7 +167,7 @@ namespace ExerciseConsoleApp
                     exerciseEvent.CategoryOfExercise = exerciseCategory;
                     exerciseEvent.CountOfExercise = exerciseCount;
 
-                    var recordRepository = new RecordRepository();
+                    
                     recordRepository.Add(exerciseEvent);
 
                     Console.WriteLine(exerciseEvent);
@@ -216,6 +219,8 @@ namespace ExerciseConsoleApp
                 return minutesLeft;
             }
         }
+
+       
         static void ViewRecordBook()
         {
             string recordSpan = "";
@@ -232,13 +237,13 @@ namespace ExerciseConsoleApp
             switch (RecordViewResponse)
             {
                 case "1":
-                    recordSpan = "All-Time Totals";
+                    RecordSpan = "All-Time Totals";
                     break;
                 case "2":
-                    recordSpan = "This Weeks Totals";
+                    RecordSpan = "This Weeks Totals";
                     break;
                 case "3":
-                    recordSpan = "Today's Totals";
+                    RecordSpan = "Today's Totals";
                     break;
                 case "4":
                     ReturnToMenu();
@@ -251,14 +256,8 @@ namespace ExerciseConsoleApp
             }
 
         }
-        static void EditExerciseList()
-        {
-            Console.WriteLine("This feature is under development.");
-            ReturnToMenu();
 
-        }
-
-        static void ExitProgram()
+        static bool ExitProgram()
         {
             Console.WriteLine("Are you sure you want to exit  the program?");
             Console.WriteLine("Type y for Yes. I want to Exit");
@@ -269,10 +268,15 @@ namespace ExerciseConsoleApp
             if (ExitProgramResponse != "y")
             {
                 ReturnToMenu();
+                return true;
+                
             }
             else
             {
                 Console.WriteLine("Later!");
+                return false;
+
+                
             }
         }
 

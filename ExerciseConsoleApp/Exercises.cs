@@ -24,7 +24,7 @@
             }
             set
             {
-                _categoryOfExercise = value;
+                _nameOfExercise = value;
             }
         }
 
@@ -41,22 +41,23 @@
             }
         }
 
-        private DateTime _timeOfExercise;
-        public DateTime TimeOfExercise
+        private DateTime _logTime;
+        public DateTime LogTime
         {
             get
             {
-                return this._timeOfExercise;
+                DateTime logTime = DateTime.Now;
+                return _logTime;
             }
             set
             {
-                this._timeOfExercise = value;
+                _logTime = value;
             }
         }
 
         public override string ToString()
         {
-            return $" CategoryofExercise: {CategoryOfExercise}, Exercise Name: {NameOfExercise}, CountofExercise: {CountOfExercise}, TimeOfExercise: {TimeOfExercise}";
+            return $" CategoryofExercise: {CategoryOfExercise}, Exercise Name: {NameOfExercise}, CountofExercise: {CountOfExercise}, LogTime: {LogTime}";
         }
             
         
