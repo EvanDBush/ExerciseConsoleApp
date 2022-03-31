@@ -200,33 +200,13 @@ namespace ExerciseConsoleApp
             {
                 Console.WriteLine("I'm sorry,that input did not work. Please try entering 1 or 2 again.");
             }
-        }
-
-        static int MinutesLeft(ref int hoursLeft, int minutesNow)
-        {
-            int minutesLeft = 60 - minutesNow;
-
-            if (minutesLeft == 60)
-            {
-
-                hoursLeft--;
-                return minutesLeft;
-
-            }
-            else
-            {
-                
-                return minutesLeft;
-            }
-        }
-
-       
+        }      
         static void ViewRecordBook()
         {
             string recordSpan = "";
 
             Console.WriteLine("Which Records would you like to view?");
-            Console.WriteLine(" 1 - All-Time Totals");
+            Console.WriteLine(" 1 - All-Exercise Records");
             Console.WriteLine(" 2 - This Weeks Totals");
             Console.WriteLine(" 3 - Todays Totals");
             Console.WriteLine(" 4 - Back to Main Menu");
@@ -237,7 +217,7 @@ namespace ExerciseConsoleApp
             switch (RecordViewResponse)
             {
                 case "1":
-                    RecordSpan = "All-Time Totals";
+                    RecordSpan = "All Exercise Events";
                     break;
                 case "2":
                     RecordSpan = "This Weeks Totals";
@@ -267,7 +247,6 @@ namespace ExerciseConsoleApp
 
             if (ExitProgramResponse != "y")
             {
-                ReturnToMenu();
                 return true;
                 
             }
