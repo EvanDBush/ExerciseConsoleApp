@@ -246,6 +246,7 @@ namespace ExerciseConsoleApp
                 string category = "Cardio";
                 int result = recordRepository.GetTotalCountByCategoryName(category);
                 Console.WriteLine($"You have done a total of {result} minutes of cardio exercises.");
+                Console.ReadLine();
             }
             if (CategoryRecordResponse == "2")
             {
