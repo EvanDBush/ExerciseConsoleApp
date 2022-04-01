@@ -8,17 +8,13 @@ namespace ExerciseConsoleApp
         private static RecordRepository recordRepository = new RecordRepository("ExerciseHistory.json");
         static void Main(string[] args)
         {
-
             do
             {
                 DisplayMenu();
             }
-
-
-            while (ExitProgram());
-           
-            
+            while (ExitProgram());     
         }
+
         static void DisplayMenu()
         {
             Console.WriteLine("**************************************************");
@@ -46,17 +42,13 @@ namespace ExerciseConsoleApp
                 default:
                     Console.WriteLine("That input was not understood. Please try again.");
                     break;
-
             }
-
-            
+        
             Console.Clear();
         }
 
-
         static void LogExercise()
         {
-
             Console.WriteLine("Let's log in an exercise! Did you work out today?");
             Console.WriteLine("Type y for Yes");
             Console.WriteLine("Type n for No");
@@ -67,12 +59,10 @@ namespace ExerciseConsoleApp
             if (openingResponse == "y")
             {
                 Console.WriteLine("That is Great! What did you work on?");
-
                 Console.WriteLine("1) Cardio");
                 Console.WriteLine("2) Strength");
 
                 string categoryResponse = Console.ReadLine();
-
 
                 if (categoryResponse == "1")
                 {
@@ -101,7 +91,6 @@ namespace ExerciseConsoleApp
                         default:
                             Console.WriteLine("I'm Sorry, that input did not work."); 
                             break;
-
                     }
 
                     Console.WriteLine($"how long did you {exerciseName} for?");
@@ -150,30 +139,27 @@ namespace ExerciseConsoleApp
                         default:
                             Console.WriteLine("I'm Sorry, that input did not work.");
                             break;
-
                     }
 
                     Console.WriteLine($"how many {exerciseName} did you do?");
+                    
                     int exerciseCount = int.Parse(Console.ReadLine());
-
                     var exerciseEvent = new ExerciseEvent();
+                    
                     exerciseEvent.NameOfExercise = exerciseName;
                     exerciseEvent.CategoryOfExercise = exerciseCategory;
                     exerciseEvent.CountOfExercise = exerciseCount;
-
-                    
+                
                     recordRepository.Add(exerciseEvent);
 
                     Console.WriteLine(exerciseEvent);
                     Console.WriteLine("Press enter to continue");
                     Console.ReadLine();
-
                 }
                 else
                 {
                     Console.WriteLine("I'm sorry,that input did not work. Please try entering 1 or 2 again.");
                 }
-
             }
 
             if (openingResponse == "n")
@@ -188,7 +174,6 @@ namespace ExerciseConsoleApp
                 Console.WriteLine("Go do an exercise and come back!");
                 Console.WriteLine("Press enter to continue");
                 Console.ReadLine();
-
             }
             else
             {
@@ -197,7 +182,6 @@ namespace ExerciseConsoleApp
         }      
         static void ViewRecordBook()
         {
-
             Console.WriteLine("Which Records would you like to view?");
             Console.WriteLine(" 1 - All-Exercise Records");
             Console.WriteLine(" 2 - Category Totals");
@@ -222,12 +206,9 @@ namespace ExerciseConsoleApp
                     GetPersonalBests();
                     break;
                 default:
-                    Console.WriteLine("I'm Sorry, that input did not work.");
-                    
+                    Console.WriteLine("I'm Sorry, that input did not work.");                
                     break;
-
             }
-
         }
         static void GetAllRecords() 
         {
@@ -240,7 +221,6 @@ namespace ExerciseConsoleApp
             int SwimResult = recordRepository.GetTotalCountByExerciseName("Swim");
             Console.WriteLine($"Swimming: {SwimResult} minutes");
             Console.WriteLine();
-
             int StrengthResult = recordRepository.GetTotalCountByCategoryName("Strength");
             Console.WriteLine($"Total Strength Repetitions: {StrengthResult} repetitions.");
             int PushupResult = recordRepository.GetTotalCountByExerciseName("Push-ups");
@@ -251,7 +231,6 @@ namespace ExerciseConsoleApp
             Console.WriteLine($"Lunges: {LungesResult}");
             int SquatsResult = recordRepository.GetTotalCountByExerciseName("Squats");
             Console.WriteLine($"Squats: {SquatsResult}");
-
             Console.WriteLine("Press enter to continue");
             Console.ReadLine();
         }
@@ -274,7 +253,6 @@ namespace ExerciseConsoleApp
                 string category = "Strength";
                 int result = recordRepository.GetTotalCountByCategoryName(category);
                 Console.WriteLine($"You have done a total of {result} repetitions of strength exercises.");
-
                 Console.WriteLine("Press enter to continue");
                 Console.ReadLine();
             }
@@ -325,17 +303,13 @@ namespace ExerciseConsoleApp
                 default:
                     Console.WriteLine("I'm Sorry, that input did not work.");
                     break;
-
             }
 
             int result = recordRepository.GetTotalCountByExerciseName(exerciseName);
             Console.WriteLine($"Your {exerciseName} total is: {result}.");
-
             Console.WriteLine("Press enter to continue");
             Console.ReadLine();
-
         }
-
         static void GetPersonalBests()
         {
             string exerciseName = "";
@@ -377,12 +351,10 @@ namespace ExerciseConsoleApp
                 default:
                     Console.WriteLine("I'm Sorry, that input did not work.");
                     break;
-
             }
 
             int result = recordRepository.GetPersonalBestByExerciseName(exerciseName);
             Console.WriteLine($"Your {exerciseName} personal best is: {result}.");
-
             Console.WriteLine("Press enter to continue");
             Console.ReadLine();
 
@@ -398,14 +370,11 @@ namespace ExerciseConsoleApp
             if (ExitProgramResponse != "y")
             {
                 return true;
-                
             }
             else
             {
                 Console.WriteLine("Later!");
-                return false;
-
-                
+                return false;            
             }
         }
 

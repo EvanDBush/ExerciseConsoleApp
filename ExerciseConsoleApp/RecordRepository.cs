@@ -11,7 +11,6 @@ namespace ExerciseConsoleApp
     public class RecordRepository
     {
         private readonly List<ExerciseEvent> _exerciseEvents = new List<ExerciseEvent>();
-
         private string _fileName;
 
         public RecordRepository(string fileName)
@@ -68,7 +67,5 @@ namespace ExerciseConsoleApp
                 .Select(exerciseEvent => exerciseEvent.CountOfExercise)
                 .Max();
         }
-
-    }
-    
+    }   
 }

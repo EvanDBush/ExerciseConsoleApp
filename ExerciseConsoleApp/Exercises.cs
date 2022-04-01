@@ -43,8 +43,6 @@
         public override string ToString()
         {
             return $" CategoryofExercise: {CategoryOfExercise}, Exercise Name: {NameOfExercise}, CountofExercise: {CountOfExercise}";
-        }
-            
-        
+        }               
     }
 }
