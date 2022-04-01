@@ -164,7 +164,6 @@ namespace ExerciseConsoleApp
 
             if (openingResponse == "n")
             {
-
                 DateTime currentTime = DateTime.Now;
                 DateTime midnightTime = DateTime.Now.AddDays(1).Date;
                 TimeSpan timeToMidnight = midnightTime.Subtract(currentTime);
@@ -357,7 +356,6 @@ namespace ExerciseConsoleApp
             Console.WriteLine($"Your {exerciseName} personal best is: {result}.");
             Console.WriteLine("Press enter to continue");
             Console.ReadLine();
-
         }
         static bool ExitProgram()
         {
@@ -377,8 +375,5 @@ namespace ExerciseConsoleApp
                 return false;            
             }
         }
-
-
     }
-
 }
