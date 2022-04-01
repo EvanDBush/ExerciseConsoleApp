@@ -15,13 +15,13 @@ This app was built using Microsoft Visual Studio Code 2022 and .NET 6.0. For bes
 
 ## Project Requirements:
 
-[?] Project is uploaded to your GitHub repository and shows at minimum 5 separate commits.
+[x] Project is uploaded to your GitHub repository and shows at minimum 5 separate commits.
 
-[?] Project includes a README file.
+[x] Project includes a README file.
 
-[?] Create at least one class, then create at least one object of that class and populate it with data. Use or display the data in your application.
+[x] Create at least one class, then create at least one object of that class and populate it with data. Use or display the data in your application.
 
-[?] Create and call at least 3 functions or methods, at least one of which must return a value that is used in your application.
+[x] Create and call at least 3 functions or methods, at least one of which must return a value that is used in your application.
 
 ***
 
