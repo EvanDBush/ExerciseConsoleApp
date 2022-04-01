@@ -40,24 +40,9 @@
                 _countOfExercise = value;
             }
         }
-
-        private DateTime _logTime;
-        public DateTime LogTime
-        {
-            get
-            {
-                DateTime logTime = DateTime.Now;
-                return _logTime;
-            }
-            set
-            {
-                _logTime = value;
-            }
-        }
-
         public override string ToString()
         {
-            return $" CategoryofExercise: {CategoryOfExercise}, Exercise Name: {NameOfExercise}, CountofExercise: {CountOfExercise}, LogTime: {LogTime}";
+            return $" CategoryofExercise: {CategoryOfExercise}, Exercise Name: {NameOfExercise}, CountofExercise: {CountOfExercise}";
         }
             
         

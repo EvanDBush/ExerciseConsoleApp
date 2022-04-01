@@ -42,7 +42,6 @@ namespace ExerciseConsoleApp
                     ViewRecordBook();
                     break;
                 case "q":
-                    ExitProgram();
                     break;
                 default:
                     Console.WriteLine("That input was not understood. Please try again.");
@@ -100,8 +99,7 @@ namespace ExerciseConsoleApp
                             exerciseName = "Swim";
                             break;
                         default:
-                            Console.WriteLine("I'm Sorry, that input did not work.");
-                            
+                            Console.WriteLine("I'm Sorry, that input did not work."); 
                             break;
 
                     }
@@ -118,6 +116,7 @@ namespace ExerciseConsoleApp
                     recordRepository.Add(exerciseEvent);
 
                     Console.WriteLine(exerciseEvent);
+                    Console.WriteLine("Press enter to continue");
                     Console.ReadLine();
                 }
 
@@ -131,7 +130,6 @@ namespace ExerciseConsoleApp
                     Console.WriteLine("2) Sit-ups");
                     Console.WriteLine("3) Lunges");
                     Console.WriteLine("4) Squats");
-                    Console.WriteLine("5) Cardio Exercises");
 
                     string exerciseNameResponse = Console.ReadLine();
 
@@ -167,6 +165,8 @@ namespace ExerciseConsoleApp
                     recordRepository.Add(exerciseEvent);
 
                     Console.WriteLine(exerciseEvent);
+                    Console.WriteLine("Press enter to continue");
+                    Console.ReadLine();
 
                 }
                 else
@@ -180,13 +180,14 @@ namespace ExerciseConsoleApp
             {
 
                 DateTime currentTime = DateTime.Now;
-                DateTime midnightTime = new DateTime(currentTime.Year, currentTime.Month, currentTime.Day + 1, 0, 0, 0);
-                TimeSpan timeToMidnight = midnightTime - currentTime;
+                DateTime midnightTime = DateTime.Now.AddDays(1).Date;
+                TimeSpan timeToMidnight = midnightTime.Subtract(currentTime);
                 
                 Console.WriteLine("Thats ok! It is only " + currentTime.TimeOfDay + " right now. There is still");
-                Console.WriteLine(timeToMidnight.Hours + "hours and " + timeToMidnight.Minutes + " minutes left today!");
+                Console.WriteLine( timeToMidnight.Hours + " hours and " + timeToMidnight.Minutes + " minutes left today!");
                 Console.WriteLine("Go do an exercise and come back!");
-                // ReturnToMenu();
+                Console.WriteLine("Press enter to continue");
+                Console.ReadLine();
 
             }
             else
@@ -230,7 +231,29 @@ namespace ExerciseConsoleApp
         }
         static void GetAllRecords() 
         {
-            Console.WriteLine("This area is still being worked on.");
+            int CardioResult = recordRepository.GetTotalCountByCategoryName("Cardio");
+            Console.WriteLine($"Total Cardio Times: {CardioResult} minutes");
+            int WalkResult = recordRepository.GetTotalCountByExerciseName("Walk");
+            Console.WriteLine($"Walking: {WalkResult} minutes");
+            int RunResult = recordRepository.GetTotalCountByExerciseName("Run");
+            Console.WriteLine($"Running: {RunResult} minutes");
+            int SwimResult = recordRepository.GetTotalCountByExerciseName("Swim");
+            Console.WriteLine($"Swimming: {SwimResult} minutes");
+            Console.WriteLine();
+
+            int StrengthResult = recordRepository.GetTotalCountByCategoryName("Strength");
+            Console.WriteLine($"Total Strength Repetitions: {StrengthResult} repetitions.");
+            int PushupResult = recordRepository.GetTotalCountByExerciseName("Push-ups");
+            Console.WriteLine($"Push-ups: {PushupResult}");
+            int SitupResult = recordRepository.GetTotalCountByExerciseName("Sit-ups");
+            Console.WriteLine($"Sit-ups: {SitupResult}");
+            int LungesResult = recordRepository.GetTotalCountByExerciseName("Lunges");
+            Console.WriteLine($"Lunges: {LungesResult}");
+            int SquatsResult = recordRepository.GetTotalCountByExerciseName("Squats");
+            Console.WriteLine($"Squats: {SquatsResult}");
+
+            Console.WriteLine("Press enter to continue");
+            Console.ReadLine();
         }
 
         static void GetCategoryTotals()
@@ -251,6 +274,9 @@ namespace ExerciseConsoleApp
                 string category = "Strength";
                 int result = recordRepository.GetTotalCountByCategoryName(category);
                 Console.WriteLine($"You have done a total of {result} repetitions of strength exercises.");
+
+                Console.WriteLine("Press enter to continue");
+                Console.ReadLine();
             }
             else
             {
@@ -302,9 +328,11 @@ namespace ExerciseConsoleApp
 
             }
 
-            string category = "Cardio";
             int result = recordRepository.GetTotalCountByExerciseName(exerciseName);
             Console.WriteLine($"Your {exerciseName} total is: {result}.");
+
+            Console.WriteLine("Press enter to continue");
+            Console.ReadLine();
 
         }
 
@@ -312,7 +340,7 @@ namespace ExerciseConsoleApp
         {
             string exerciseName = "";
 
-            Console.WriteLine("What exercise would you like to see personal bests for");
+            Console.WriteLine("What exercise would you like to see personal bests for?");
             Console.WriteLine("1) Walking");
             Console.WriteLine("2) Running");
             Console.WriteLine("3) Swimming");
@@ -354,10 +382,14 @@ namespace ExerciseConsoleApp
 
             int result = recordRepository.GetPersonalBestByExerciseName(exerciseName);
             Console.WriteLine($"Your {exerciseName} personal best is: {result}.");
+
+            Console.WriteLine("Press enter to continue");
+            Console.ReadLine();
+
         }
         static bool ExitProgram()
         {
-            Console.WriteLine("Are you sure you want to exit  the program?");
+            Console.WriteLine("Do you want to exit  the program?");
             Console.WriteLine("Type y for Yes. I want to Exit");
             Console.WriteLine("Type n for No. I want to return to the menu.");
 
