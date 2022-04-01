@@ -45,20 +45,15 @@ namespace ExerciseConsoleApp
                     ExitProgram();
                     break;
                 default:
-                    ReturnToMenu();
+                    Console.WriteLine("That input was not understood. Please try again.");
                     break;
 
             }
+
+            
+            Console.Clear();
         }
 
-        static void ReturnToMenu()
-        {
-            
-            Console.WriteLine("Press enter to return to the Menu");
-            Console.ReadLine();
-            Console.Clear();
-            DisplayMenu();
-        }
 
         static void LogExercise()
         {
@@ -106,7 +101,7 @@ namespace ExerciseConsoleApp
                             break;
                         default:
                             Console.WriteLine("I'm Sorry, that input did not work.");
-                            DisplayMenu();
+                            
                             break;
 
                     }
@@ -123,9 +118,6 @@ namespace ExerciseConsoleApp
                     recordRepository.Add(exerciseEvent);
 
                     Console.WriteLine(exerciseEvent);
-                    ReturnToMenu();
-
-
                     Console.ReadLine();
                 }
 
@@ -159,7 +151,6 @@ namespace ExerciseConsoleApp
                             break;
                         default:
                             Console.WriteLine("I'm Sorry, that input did not work.");
-                            ReturnToMenu();
                             break;
 
                     }
@@ -176,14 +167,11 @@ namespace ExerciseConsoleApp
                     recordRepository.Add(exerciseEvent);
 
                     Console.WriteLine(exerciseEvent);
-                    ReturnToMenu();
 
-                    
                 }
                 else
                 {
                     Console.WriteLine("I'm sorry,that input did not work. Please try entering 1 or 2 again.");
-                    ReturnToMenu();
                 }
 
             }
@@ -198,7 +186,7 @@ namespace ExerciseConsoleApp
                 Console.WriteLine("Thats ok! It is only " + currentTime.TimeOfDay + " right now. There is still");
                 Console.WriteLine(timeToMidnight.Hours + "hours and " + timeToMidnight.Minutes + " minutes left today!");
                 Console.WriteLine("Go do an exercise and come back!");
-                ReturnToMenu();
+                // ReturnToMenu();
 
             }
             else
@@ -232,12 +220,9 @@ namespace ExerciseConsoleApp
                 case "4":
                     GetPersonalBests();
                     break;
-                case "5":
-                    ReturnToMenu();
-                    break;
                 default:
                     Console.WriteLine("I'm Sorry, that input did not work.");
-                    ReturnToMenu();
+                    
                     break;
 
             }
@@ -245,10 +230,7 @@ namespace ExerciseConsoleApp
         }
         static void GetAllRecords() 
         {
-            foreach (ExerciseEvent exerciseEvent in List<ExerciseEvent> )
-            {
-                Console.WriteLine(exerciseEvent);
-            }
+            Console.WriteLine("This area is still being worked on.");
         }
 
         static void GetCategoryTotals()
@@ -272,7 +254,7 @@ namespace ExerciseConsoleApp
             }
             else
             {
-                ReturnToMenu();
+ 
             }
         }
 
@@ -316,10 +298,14 @@ namespace ExerciseConsoleApp
                     break;
                 default:
                     Console.WriteLine("I'm Sorry, that input did not work.");
-                    ReturnToMenu();
                     break;
 
             }
+
+            string category = "Cardio";
+            int result = recordRepository.GetTotalCountByExerciseName(exerciseName);
+            Console.WriteLine($"Your {exerciseName} total is: {result}.");
+
         }
 
         static void GetPersonalBests()
@@ -362,10 +348,12 @@ namespace ExerciseConsoleApp
                     break;
                 default:
                     Console.WriteLine("I'm Sorry, that input did not work.");
-                    ReturnToMenu();
                     break;
 
             }
+
+            int result = recordRepository.GetPersonalBestByExerciseName(exerciseName);
+            Console.WriteLine($"Your {exerciseName} personal best is: {result}.");
         }
         static bool ExitProgram()
         {
